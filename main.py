@@ -6,7 +6,7 @@ window.minsize(width=500, height=150)
 window.config(padx= 100, pady= 30)
 
 def button_clicked():
-    result.config(text = round(int(entry.get()) * 1.609344, 2))
+    result.config(text = round(float(entry.get()) * 1.609344, 2))
 
 entry = Entry()
 entry.grid(row = 0, column = 1, )
@@ -18,7 +18,7 @@ miles = Label(text= "miles")
 miles.grid(row= 0 , column= 2)
 miles.config(padx=15)
 
-result = Label()
+result = Label(text="0")
 result.grid(row= 1 , column= 1)
 result.config(padx= 10, pady= 10)
 
