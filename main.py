@@ -1,12 +1,20 @@
 from tkinter import *
+from  tkinter import messagebox
 
 window = Tk()
 window.title("My first converter")
 window.minsize(width=500, height=150)
 window.config(padx= 100, pady= 30)
+def entry_clear():
+    entry.delete(0, END)
+    entry.focus()
 
 def button_clicked():
-    result.config(text = round(float(entry.get()) * 1.609344, 2))
+    try:
+        result.config(text = round(float(entry.get()) * 1.609344, 2))
+    except ValueError:
+        messagebox.showwarning(message="Something went wrong , data type not supported")
+        entry_clear()
 
 entry = Entry()
 entry.grid(row = 0, column = 1, )
